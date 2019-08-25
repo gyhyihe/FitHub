@@ -1,3 +1,0 @@
-django-rest-framework
-django-rest-swagger
-django-crispy-forms
