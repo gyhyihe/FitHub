@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> Membership Update</h1>
+
+<small> *please note that the corresponding fee related to your new choice of membership type will be charged at the end of the year</small>
+
+<br>
+
+<hr>
+
+<br>
+
+<form action="{% url 'profile:memupdate' %}" method="post">
+{% csrf_token %}
+
+    <label for="umem">Available membership types:</label>  
+    
+    <br>
+    <br>
+
+    <input type="submit" name="umem" id="umem" value="Bronze">
+
+    <b>Price: </b> {{price.0.0}}/month
+
+    <br>
+    <br>
+
+    <input type="submit" name="umem" id="umem" value="Silver"> 
+    
+    <b>Price: </b> {{price.1.0}}/month
+
+    <br>
+    <br>
+
+    <input type="submit" name="umem" id="umem" value="Gold">
+
+    <b>Price: </b> {{price.2.0}}/month
+
+    <br>
+    <br>
+
+    
+
+    <input type="submit" name="umem" id="umem" value="Platinum"> 
+    <b>Price: </b> {{price.3.0}}/month
+    <br>
+    <br>
+    
+    <input type="submit" name="umem" id="umem" value="Diamond"> 
+    <b>Price: </b> {{price.4.0}}/month
+    <br>
+
+</form>
+
+{% endblock content %}

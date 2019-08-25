@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> User Portal</h1>
+<small>
+    Already a staff?
+    <!-- need to check condition later on, switch to only corresponding staff profile-->
+    <a href="{% url 'profile:staff'%}">switch to staff profile</a>
+</small>
+<br>
+<br>
+
+<h4> Personal Information </h4>
+
+<form>
+    <div>
+        <label for="uname">Legal full name: </label>  <br>
+        <input type="text" id="uname" name="uname" value="{{member.0}}" readonly><br>
+        <small> *please contact the admin if you need to change your legal full name</small>
+    </div>
+</form>
+<form action="{% url 'profile:UpdateEmail'%}" method="post">
+  {% csrf_token %}
+    <div>
+        <label for="uemail">Email address: </label>  <br>
+        <input type="hidden" id="user_id" value="{{g_user_id}}">
+        <input type="email" id="uemail" name="uemail" value="{{member.1}}">
+        <input type="submit" value="update"> <br>
+        <small> *Example: abc@case.edu </small>
+    </div>
+</form>
+
+<form action="UpdatePhone" method="post">
+  {% csrf_token %}
+    <div>
+        <label for="uphone">Phone number: </label>  <br>
+        <input type="tel" id="uphone" name="uphone" pattern="[0-9]{10}" value="{{member.2}}">
+        <input type="submit" value="update"><br>
+        <small> *Example: 1234567890</small>
+    </div>
+</form>
+
+<br>
+
+<h4> Membership Information </h4>
+
+<p1>
+    Remaining funds: {{member.3}}
+</p>
+
+<p1>
+    Membership Level: {{level}}
+</p>
+
+<p1>
+    Valid untill: {{member.4}}
+</p>
+
+<!-- change below to update membership status page, need to create this new one -->
+<a href="{% url 'profile:staff'%}">click to update membership status</a>
+
+<br>
+<br>
+
+<h4> Class Information </h4>
+
+<p1>
+    Enrolled class list:
+    <ul>
+        {% for class in classes %}
+        <li><a href="{% url 'profile:class' class.0%}">{{class.1}}</a>
+        <a href="{% url 'profile:index'%}">delete</a></li>
+        {% endfor %}
+    </ul>
+</p>
+
+<p1>
+    Want to enroll more classes?
+    <a href="{% url 'profile:classlist'%}">sign up for classes</a>
+</p>
+
+{% endblock content %}

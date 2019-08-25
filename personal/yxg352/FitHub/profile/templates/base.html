@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+    <head>
+        <title>FitHub</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        {% comment %} <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'> {% endcomment %}
+        <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    </head>
+    <body>
+    <div class = 'fithub'>
+    <header>
+        <img src="{% static "fithublogo.svg" %}" alt="fithub logo" style="width:300px;height:100px;" hspace = '20pt'/>
+    </header>  
+    </div>
+    <div class = 'padding'>
+        {% block content %}
+        
+        {% endblock content %}
+    </div>
+    </body>
+</html>

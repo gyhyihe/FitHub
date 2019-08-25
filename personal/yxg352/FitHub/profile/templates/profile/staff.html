@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> Staff Portal</h1>
+
+<br>
+
+<form>
+    <div>
+        <label for="sname">Legal full name: </label> <br>
+        <input type="text" id="sname" name="sname" value="{{staff.0}}" readonly> <br>
+        <small> *please contact the admin if you need to change your legal full name</small>
+    </div>
+</form>
+
+<br>
+
+<h3>Class Information</h3>
+
+<br>
+
+<p>
+
+    {% if empty %}
+    You have no class to manaage yet. <br>
+    {% else %}
+    <table>
+        <colgroup>
+            <col span="8" style="background-color:rgb(71, 74, 76)">
+            <col style="background-color: #4d4d4d">
+        </colgroup>
+        <tr>
+            <th> Class Name </th>
+            <th> Meeting Location </th>
+            <th> Meeting Time</th>
+            <th> More Details </th>
+        </tr>
+        {% for class in classes %}
+        <tr>
+            <td> {{class.1}} </td>
+            <td> {{class.2}} </td>
+            <td> {{class.3}} {{class.4}} - {{class.5}} </td>
+            <td> <a href="{% url 'profile:class' class.0%}"> see more</a></td>
+        </tr>
+        
+        {% endfor %}
+    </table>
+    {% endif%}
+</p>
+
+{% endblock content %}

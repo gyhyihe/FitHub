@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> Course List</h1>
+
+</br>
+</br>
+
+<p1>
+  Below are the available courses,
+  click "see more details" for more information about the course,
+  or you can register directly by clicking "register".
+</p>
+
+</br>
+
+<p1>
+  <ol>
+  {% for class in classlist %}
+      <li> {{class.name}}
+        <a href="{% url 'profile:class' class.id%}">see more details</a>
+        <!-- change the profile:index below to profile:success once the page is implemented-->
+        <form action="{% url 'profile:registerClass' class.id%}" method="post">
+          {% csrf_token %}
+            <div>
+                <input type="hidden" name=test value=1>
+                <input type="submit" value="Register">
+            </div>
+        </form>
+  {% endfor %}
+  </ol>
+</p>
+
+
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% load static %}
+
+<html>
+    
+    <head>
+        <title>FitHub</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        {% comment %} <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'> {% endcomment %}
+        <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+        {% comment %} <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> {% endcomment %}
+    </head>
+    
+    <body>
+    <div class = 'fithub'>
+    <header>
+        <div class = "fit">
+        <img src="{% static "fithublogo.svg" %}"  alt="fithub logo" style="width:300px;height:100px;" hspace = '20pt'/>
+        </div>
+        <br>
+    </div>
+ 
+ <p>
+
+ </p>
+<div>
+    <a class="nav" href="{% url 'landing:index' %}">HOME</a>  <a class="nav" href="{% url 'profile:index' %}">PROFILE</a>  <a class="nav" href="{% url 'profile:logout' %}">LOG OUT</a>
+</div>
+<p>
+
+</p>
+<hr style="margin-left: 13pt;">
+    </header>  
+    </div>
+    <div class = 'padding'>
+        {% block content %}
+        
+        {% endblock content %}
+    </div>
+    </body>
+</html>

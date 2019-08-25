@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> Staff Portal</h1>
+
+<br>
+
+<form>
+    <div>
+        <label for="sname">Legal full name: </label> <br>
+        <input type="text" id="sname" name="sname" value="{{staff.0}}" readonly> <br>
+        <small> *please contact the admin if you need to change your legal full name</small>
+    </div>
+</form>
+
+<br>
+
+<h3>Manage Classes</h3>
+
+<p>
+    {% for class in classes %}
+    <b> {{class.1}} </b>
+    <a href="{% url 'profile:class' class.0%}">edit</a> <br>
+    {% endfor %}
+    {% if empty %}
+    You have no class to manaage yet. <br>
+    {% endif%}
+</p>
+
+{% endblock content %}

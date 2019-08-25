@@ -1,0 +1,53 @@
+.fithub{
+    background: rgb(224, 144, 53);
+    /* filter:brightness(100); */
+}
+
+.padding {
+    padding-left: 30px;   
+}
+
+body{
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.fit{
+    filter: invert(1);
+  }
+
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: 30pt;
+    border-style: inset;
+    border-width: 1px;
+  }
+  
+input{
+    color:#000000;
+}
+
+input[type=submit] {
+    color: #ffffff;
+    background-color: rgb(143, 143, 143);
+    border:2px outset rgb(143, 143, 143);
+}
+
+
+.nav{
+
+    font-family: "Arial Black", Gadget, sans-serif;
+    display: inline-block;
+    margin-left: 20pt;
+    color:rgb(143, 143, 143)
+}
+
+a{
+
+    color: rgb(224, 144, 53);
+    font-size: 120%;
+}

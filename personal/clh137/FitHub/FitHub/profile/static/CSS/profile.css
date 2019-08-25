@@ -1,0 +1,39 @@
+.fithub{
+    background: rgb(224, 144, 53);
+    /* filter:brightness(100); */
+}
+
+.padding {
+    padding-left: 30px;   
+}
+
+body{
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+img { /* svg on an img tag */
+
+    filter: invert(1);
+  }
+
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: 30pt;
+    border-style: inset;
+    border-width: 1px;
+  }
+  
+input{
+    color:#000000;
+}
+
+input[type=submit] {
+    color: #ffffff;
+    background-color: rgb(143, 143, 143);
+    border:2px outset rgb(143, 143, 143);
+}

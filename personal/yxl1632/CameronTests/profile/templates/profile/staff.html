@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> Staff Portal</h1>
+
+<br>
+
+<form>
+    <div>
+        <label for="sname">Legal full name: </label> <br>
+        <input type="text" id="sname" name="sname" value="{{staff.name}}" readonly> <br>
+        <small> *please contact the admin if you need to change your legal full name</small>
+    </div>
+</form>
+
+<br>
+
+<h3>Manage Classes</h3>
+<br>
+<p1>
+    {% for class in classes.all %}
+    <b> {{class.name}} </b>
+    <a href="{% url 'profile:class' class.id%}">edit</a> <br>
+    {% endfor %}
+    See more classes: <br>
+    <a href="{% url 'profile:classlist'%}"> Full class list </a>
+</p1>
+
+
+{% endblock content %}

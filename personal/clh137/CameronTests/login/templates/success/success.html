@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% if user.is_authenticated and user.is_teacher %}
+Congrats!!!! you are a <b> Teacher </b>
+{% else %}
+Congrats!!!! you are a <b> Student </b>
+{% endif %}

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> User Portal</h1>
+<small>
+    Already a staff?
+    <!-- need to check condition later on, switch to only corresponding staff profile-->
+    <a href="{% url 'profile:staff'%}">switch to staff profile</a>
+</small>
+<br>
+<br>
+
+<h4> Personal Information </h4>
+
+<form>
+    <div>
+        <label for="uname">Legal full name: </label>  <br>
+        <input type="text" id="uname" name="uname" value="{{member.name}}" readonly>
+        <small> *please contact the admin if you need to change your legal full name</small>
+    </div>
+</form>
+
+<form action="UpdateEmail" method="post">
+  {% csrf_token %}
+    <div>
+        <label for="uemail">Email address: </label>  <br>
+        <input type="text" id="uemail" name="uemail" value="{{member.email}}">
+        <input type="submit" value="UpdateEmail">
+    </div>
+</form>
+
+<form>
+    <div>
+        <label for="uphone">Phone number: </label>  <br>
+        <input type="text" id="uphone" name="uphone" value="{{member.phone_number}}">
+        <input type="submit" value="UpdatePhone">
+    </div>
+</form>
+
+<br>
+
+<h4> Membership Information </h4>
+
+<p1>
+    Remaining funds: {{member.funds}}
+</p>
+
+<p1>
+    Membership Level: {{level.get_level_status_display}}
+</p>
+
+<p1>
+    Valid untill: {{member.expired_date}}
+</p>
+
+<!-- change below to update membership status page, need to create this new one -->
+<small><a href="{% url 'profile:staff'%}">click to update membership status</a> </small>
+
+<br>
+<br>
+
+<h4> Class Information </h4>
+
+<p1>
+    Enrolled class list:
+    <ul>
+        {% for class in member.classes.all %}
+        <li><a href="{% url 'profile:class' class.id%}">{{class.name}}</a></li>
+        {% endfor %}
+    </ul>
+</p>
+
+<p1>
+    Want to enroll more classes?
+    <a href="{% url 'profile:classlist'%}">sign up for classes</a>
+</p>
+
+<p1>
+    No longer want your account?
+    <a href="{% url 'profile:index'%}">delete account</a>
+</p>
+
+
+{% endblock content %}

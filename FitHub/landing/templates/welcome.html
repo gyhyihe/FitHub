@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+{% comment %} <header class="header">
+  <div class="header-text">Sign in via:</div>
+  <a href="#" class="header-link">Spotify</a>
+  <a href="#" class="header-link">Deezer</a>
+</header> {% endcomment %}
+
+<section class="landing-section landing-main">
+  <h1>Welcome to Fithub</h1>
+  <br>
+
+  <h3>
+    Your favorite gym in the world
+  </h3>
+  <p class="landing-main-text">
+    Got tired of ugly dudes around?
+    <br>
+    You have found a perfect solution...
+  </p>
+</section>
+
+<br>
+<section class="landing-section langing-features">
+  <section class="landing-feature feature-music-services">
+    <h3>Come checkout Fithub</h3>
+    <ul>
+      <li>Yoga</li>
+      <li>Swimming</li>
+      <li>Tennis</li>
+      <li>...</li>
+      <li>and many more!</li>
+    </ul>
+
+    <br>
+  </section>
+
+  <img src="{% static "greet.png" %}" alt="greetings" width = "350pt"/>
+  <section class="landing-feature feature-notifications">
+
+  <br>
+    <h4>Sign up today!</h4>
+    <a href="{% url 'profile:signup'%}"> signup </a>
+    <h4>Already have an account?</h4>
+    <a href="{% url 'login:login'%}"> login </a>
+  </section>
+</section>
+
+{% endblock content %}
