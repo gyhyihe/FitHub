@@ -1,1 +1,1 @@
-
+FitHub is a virtual gym located on the 4th floor of Veale Center and is open to all CWRU student and faculty. Customers need to register for a membership online before going to the gym. There are five levels of memberships with different sign-up prices: `Bronze`, `Silver`, `Gold`, `Platinum`, and `Diamond`. We are designing websites connecting to the gym database, which allow both users and managers to retrieve and update their information, register in the classes being taught at Veale, or become a course tutor themselves.
